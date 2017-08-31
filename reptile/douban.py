@@ -24,9 +24,10 @@ def getNowPlayingMovie_list():
     for item in nowplaying_movie_list:
         nowplaying_dict = {}
         nowplaying_dict['id'] = item['data-subject']
-        for tag_img_item in item.find_all('img'):
-            nowplaying_dict['name'] = tag_img_item['alt']
-            nowplaying_list.append(nowplaying_dict)
+        nowplaying_dict['name'] = item['data-title']
+        # for tag_img_item in item.find_all('img'):
+        #     nowplaying_dict['name'] = tag_img_item['alt']
+        nowplaying_list.append(nowplaying_dict)
     return nowplaying_list
 
 #爬取评论函数
